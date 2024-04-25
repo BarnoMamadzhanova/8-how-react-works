@@ -26,8 +26,8 @@ export default function App() {
   );
 }
 
-console.log(<DifferentContent />);
-console.log(DifferentContent());
+// console.log(<DifferentContent />);
+// console.log(DifferentContent());
 
 function Tabbed({ content }) {
   const [activeTab, setActiveTab] = useState(0);
@@ -40,14 +40,13 @@ function Tabbed({ content }) {
         <Tab num={2} activeTab={activeTab} onClick={setActiveTab} />
         <Tab num={3} activeTab={activeTab} onClick={setActiveTab} />
       </div>
-
       {activeTab <= 2 ? (
         <TabContent item={content.at(activeTab)} />
       ) : (
         <DifferentContent />
       )}
-
-      {TabContent({ item: content.at(0) })}
+      {/* {TabContent({ item: content.at(0) })} */} Don't call component in this
+      way - it's rendering not a component, but react elements on a wrong way
     </div>
   );
 }
